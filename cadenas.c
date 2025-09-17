@@ -4,7 +4,7 @@
 
 //Funciones
 int longitud_cadena(char string[50]);
-char concatenacion(char string1[50], char string2[50]);
+void concatenacion(char string1[50], char string2[50], char res[50]);
 char potencia(char string[50]);
 char calculo_longitud(char string[50]);
 char prefijos(char string[50]);
@@ -49,11 +49,15 @@ int main(){
         switch (opcion){
             
             // case 1:
+            case 1:
                 do {
-                    printf("(3) Calculo longitud");
-                    printf("\nElige la cadena: ");
-                    scanf("%d", &eleccion_cadena);
-                    printf("\n\nDesea calcular otra cadena? (1-SI/0-NO): ");
+                    concatenacion(chadena[0], chadena[1], chadena[2]);
+
+                    printf("Cadena 1: %s", chadena[0]);
+                    printf("\nCadena 2: %s", chadena[1]);
+                    printf("\nConcatenacion : %s", chadena[2]);
+
+                    printf("\n\nsalir? (0-SI/1-NO): ");
                     scanf("%d", &continuar);
 
                 } while(continuar == 1);
@@ -92,6 +96,9 @@ int main(){
             // case 8:
             
             // case 9:
+            case 9: // Salir
+                exit(0);
+                break;
         }
     }
     
@@ -105,4 +112,17 @@ int longitud_cadena(char string[50]){
         tamano++;
     }
     return tamano;    
+}
+void concatenacion(char string1[50], char string2[50], char res[50]){
+    int i = 0, j = 0;
+    while (string1[i] != '\0') {
+        res[i] = string1[i];
+        i++;
+    }
+    while (string2[j] != '\0') {
+        res[i] = string2[j];
+        i++;
+        j++;
+    }
+    res[i] = '\0';
 }
