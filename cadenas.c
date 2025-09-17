@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h> 
 #include <stdlib.h>   // para system()
-
+ //hola AMORCHIS
+ 
 
 //Funciones
 int longitud_cadena(char string[50]);
