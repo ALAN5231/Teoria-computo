@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h> 
 #include <stdlib.h>   // para system()
- //hola AMORCHIS
- 
 
 //Funciones
 int longitud_cadena(char string[50]);
@@ -17,20 +15,17 @@ char mostrar_cadenas(char string[50]);
 
 int main(){
     system("cls"); // limpiar pantalla
-    char string1[50];
-    char string2[50];
 
     char chadena[50][50];
     
     int opcion, eleccion_cadena;
-    char* cadenas[50] = {string1, string2};
 
     printf("PRACTICA 1 \n");
 
     printf("Introduce la cadena 1: ");
     scanf("%s", chadena[0]);
     printf("Introduce la cadena 2: ");
-    scanf("%s", &string2);
+    scanf("%s", chadena[1]);
     system("cls");
 
     while(1){
@@ -86,7 +81,7 @@ int main(){
             
             
             
-            // case 4:
+            case 4:
             
             // case 5:
             
@@ -105,10 +100,8 @@ int main(){
 }
 
 int longitud_cadena(char string[50]){
-
     int tamano=0;
-    for(int i=0; string[i]!='\0'; i++)
-    {
+    for(int i=0; string[i]!='\0'; i++) {
         tamano++;
     }
     return tamano;    
