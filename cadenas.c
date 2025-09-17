@@ -7,8 +7,8 @@ int longitud_cadena(char string[50]);
 char concatenacion(char string1[50], char string2[50]);
 char potencia(char string[50]);
 char calculo_longitud(char string[50]);
-char prefijos(char string[50]);
-char sufijos(char string[50]);
+void prefijos(char string[50]);
+void sufijos(char string[50]);
 char subcadenas(char string[50]);
 char subsecuencias(char string[50]);
 char mostrar_cadenas(char string[50]);
@@ -82,8 +82,39 @@ int main(){
             
             
             case 4:
+                do {
+                    printf("(4) Prefijos");
+                    printf("\nElige la cadena: ");
+                    scanf("%d", &eleccion_cadena);
+
+                    printf("Los prefijos de la cadena '%s' son:\n",chadena[eleccion_cadena-1]);
+
+                    prefijos(chadena[eleccion_cadena-1]);
+                    printf("\n\nDesea obtener los prefijos de otra cadena? (1-SI/0-NO): ");
+                    scanf("%d", &continuar);
+
+                } while(continuar == 1);
+
+                system("cls");
+                break;
             
-            // case 5:
+            case 5:
+                do {
+                    printf("(5) Sufijos");
+                    printf("\nElige la cadena: ");
+                    scanf("%d", &eleccion_cadena);
+
+                    printf("Los sufijos de la cadena '%s' son:\n",chadena[eleccion_cadena-1]);
+
+                    sufijos(chadena[eleccion_cadena-1]);
+                    printf("\n\nDesea obtener los sufijos de otra cadena? (1-SI/0-NO): ");
+                    scanf("%d", &continuar);
+
+                } while(continuar == 1);
+
+                system("cls");
+                break;
+            
             
             // case 6:
             
@@ -91,7 +122,10 @@ int main(){
             
             // case 8:
             
-            // case 9:
+            case 9:
+                printf("Saliendo del programa...\n");
+                exit(0);
+                break;
         }
     }
     
@@ -105,4 +139,28 @@ int longitud_cadena(char string[50]){
         tamano++;
     }
     return tamano;    
+}
+
+void prefijos(char string[50]){
+    int n = strlen(string);
+
+    for(int i=0; i<n;i++){
+        for(int j=0;j<=i;j++){
+            printf("%c", string[j]);
+        }
+        printf("\n");
+    }
+
+}
+
+void sufijos(char string[50]){
+    int n = strlen(string);
+
+    for(int i=n; i>=0;i--){
+        for(int j=i;j<=n;j++){
+            printf("%c", string[j]);
+        }
+        printf("\n");
+    }
+
 }
